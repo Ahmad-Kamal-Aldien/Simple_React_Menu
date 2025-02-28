@@ -6,6 +6,8 @@ import Cart from './Components/Cart';
 import { useEffect, useState } from 'react';
 import Data from './Data/Data';
 import { Container } from 'react-bootstrap';
+
+
 function App() {
 
   const[data,SetData]=useState(Data);
@@ -36,10 +38,14 @@ if(catName=='الكل'){
 
   return (
     <>
-    <Header/>
+    <Header getSpecificCategory={getSpecificCategory}/>
     <Container>
+
     <Category getAllCat={getAllCat}  getSpecificCategory={getSpecificCategory}/>
+ 
     <Cart data={data}/>
+
+    
     </Container>
    
     

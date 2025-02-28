@@ -1,13 +1,16 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-
+import Zoom from 'react-reveal/Zoom';
 const Cart=({data})=>{
 
 
     return (
+     
    
         <>
-           
+            <Zoom left>
+
+
         {data.length>1?data.map((item)=>{
           return(
 <Card key={item.id} style={{ width: '100%' }} className='d-flex flex-row mt-4'>
@@ -28,7 +31,7 @@ const Cart=({data})=>{
       
           
         } ):<h2>No Exist Data</h2>}
-       
+       </Zoom>
         </>
     )
 }
