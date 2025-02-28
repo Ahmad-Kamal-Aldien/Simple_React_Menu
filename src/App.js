@@ -12,14 +12,33 @@ function App() {
 
  
 
+  const getAllCat=["الكل",...new Set( Data.map( (item)=>{
+    return item.cat_name
+  }))]
+
+  const getSpecificCategory=(catName)=>{
+
+   const Items=Data.filter((i)=>i.cat_name==catName );
+if(catName=='الكل'){
+
+  SetData(Data);
+  return
+}
+
+
+
+   SetData(Items);
+  }
  
-  const[cat,setCat]=useState();
+  const[cat,setCat]=useState(getAllCat);
+    
+ 
 
   return (
     <>
     <Header/>
     <Container>
-    <Category />
+    <Category getAllCat={getAllCat}  getSpecificCategory={getSpecificCategory}/>
     <Cart data={data}/>
     </Container>
    

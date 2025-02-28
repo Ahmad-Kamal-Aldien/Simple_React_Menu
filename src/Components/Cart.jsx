@@ -5,15 +5,17 @@ const Cart=({data})=>{
 
 
     return (
+   
         <>
+           
         {data.length>1?data.map((item)=>{
           return(
-<Card style={{ width: '100%' }} className='d-flex flex-row'>
+<Card key={item.id} style={{ width: '100%' }} className='d-flex flex-row mt-4'>
           <Card.Img variant="top" style={{width:'300px', height:'200px'}} src={item.img_url} />
           <Card.Body>
             <div className='d-flex justify-content-between'>
             <Card.Title>{item.cat_name}</Card.Title>
-            <Card.Title>{item.price}</Card.Title>
+            <Card.Title>{item.price} جنيه</Card.Title>
             </div>
             
             <Card.Text className='mt-5'>
